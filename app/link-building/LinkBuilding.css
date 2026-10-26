@@ -1,0 +1,1721 @@
+
+/* =========================================
+   VEFTOR LINK BUILDING PAGE
+   Matches vlink-* classes in page.tsx
+========================================= */
+
+.vlink-page {
+  --vlink-navy: #101c35;
+  --vlink-navy-light: #1c2d4c;
+  --vlink-orange: #f45116;
+  --vlink-orange-light: #fff0e6;
+  --vlink-green: #10a878;
+  --vlink-green-light: #e0f5ec;
+  --vlink-cream: #fff8ef;
+  --vlink-sand: #f4e9dc;
+  --vlink-text: #172238;
+  --vlink-muted: #465269;
+  --vlink-border: rgba(16, 28, 53, 0.15);
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--vlink-cream);
+  color: var(--vlink-text);
+  font-family: inherit;
+}
+
+.vlink-page *,
+.vlink-page *::before,
+.vlink-page *::after {
+  box-sizing: border-box;
+}
+
+.vlink-page img {
+  max-width: 100%;
+}
+
+.vlink-page a {
+  text-decoration: none;
+}
+
+.vlink-container {
+  width: min(1160px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.vlink-section {
+  padding-block: 95px;
+}
+
+.vlink-heading,
+.vlink-title,
+.vlink-page h1,
+.vlink-page h2,
+.vlink-page h3,
+.vlink-page p {
+  overflow-wrap: break-word;
+}
+
+.vlink-heading {
+  margin: 0;
+  color: var(--vlink-navy);
+  font-size: clamp(34px, 4vw, 53px);
+  font-weight: 850;
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.vlink-heading span,
+.vlink-title span {
+  color: var(--vlink-orange);
+}
+
+.vlink-paragraph {
+  margin: 0;
+  color: var(--vlink-text);
+  font-size: 14px;
+  line-height: 1.9;
+  opacity: 1;
+  visibility: visible;
+}
+
+.vlink-kicker {
+  margin-bottom: 20px;
+  color: var(--vlink-muted);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.6px;
+}
+
+.vlink-kicker-light {
+  color: #e5f2ed;
+}
+
+.vlink-heading-light {
+  color: #fff;
+}
+
+.vlink-paragraph-light {
+  max-width: 390px;
+  color: #f1f4fa;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.vlink-hero {
+  position: relative;
+  isolation: isolate;
+  padding-top: 76px;
+  background:
+    radial-gradient(
+      ellipse at 85% 25%,
+      rgba(16, 168, 120, 0.13),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 5% 85%,
+      rgba(244, 81, 22, 0.09),
+      transparent 32%
+    ),
+    var(--vlink-cream);
+}
+
+.vlink-hero-grid-bg {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(16, 28, 53, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 28, 53, 0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 95%);
+}
+
+.vlink-hero-glow,
+.vlink-cta-orb {
+  position: absolute;
+  z-index: -1;
+  top: 12%;
+  right: 12%;
+  width: 270px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(16, 168, 120, 0.19);
+  filter: blur(65px);
+  pointer-events: none;
+  animation: vlink-glow 8s ease-in-out infinite alternate;
+}
+
+.vlink-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.vlink-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-block: 15px 45px;
+  animation: vlink-enter 0.8s ease-out both;
+}
+
+.vlink-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--vlink-navy);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.7px;
+}
+
+.vlink-live-dot {
+  position: relative;
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--vlink-green);
+}
+
+.vlink-live-dot::after {
+  position: absolute;
+  inset: -4px;
+  border: 1px solid var(--vlink-green);
+  border-radius: 50%;
+  content: "";
+  animation: vlink-pulse 2s ease-out infinite;
+}
+
+.vlink-title {
+  margin: 26px 0 22px;
+  color: var(--vlink-navy);
+  font-size: clamp(43px, 5.2vw, 70px);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -3px;
+}
+
+.vlink-lead {
+  max-width: 500px;
+  margin: 0;
+  color: var(--vlink-text);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.vlink-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 27px;
+}
+
+.vlink-button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 0 19px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 850;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.vlink-button:hover {
+  transform: translateY(-4px);
+}
+
+.vlink-button span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.vlink-button:hover span {
+  transform: translate(3px, -2px);
+}
+
+.vlink-button-orange {
+  color: #fff !important;
+  background: var(--vlink-orange);
+  box-shadow: 0 9px 23px rgba(244, 81, 22, 0.2);
+}
+
+.vlink-button-orange:hover {
+  color: #fff !important;
+  background: #d9430e;
+  box-shadow: 0 14px 30px rgba(244, 81, 22, 0.28);
+}
+
+.vlink-button-light {
+  color: var(--vlink-navy) !important;
+  border-color: rgba(16, 28, 53, 0.25);
+  background: #f1e5d7;
+}
+
+.vlink-button-light:hover {
+  color: var(--vlink-orange) !important;
+  background: #e8d8c7;
+}
+
+.vlink-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  color: var(--vlink-text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.vlink-trust > span {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: #086b4d;
+  background: var(--vlink-green-light);
+}
+
+/* Hero image and overlay */
+
+.vlink-hero-visual {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 460px;
+  place-items: center;
+  animation: vlink-enter 0.9s 0.12s ease-out both;
+}
+
+.vlink-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 510px;
+  height: 380px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 28, 53, 0.2);
+  border-radius: 18px;
+  background: var(--vlink-navy-light);
+  box-shadow: 0 24px 60px rgba(16, 28, 53, 0.2);
+  transform: rotate(1.2deg);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.vlink-hero-visual:hover .vlink-image-frame {
+  transform: rotate(0) translateY(-5px);
+  box-shadow: 0 32px 70px rgba(16, 28, 53, 0.27);
+}
+
+.vlink-hero-image,
+.vlink-feature-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vlink-hero-image {
+  transition: transform 0.7s ease;
+}
+
+.vlink-hero-visual:hover .vlink-hero-image {
+  transform: scale(1.055);
+}
+
+.vlink-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 28, 53, 0.02) 20%,
+    rgba(16, 28, 53, 0.88) 100%
+  );
+}
+
+.vlink-image-caption {
+  position: absolute;
+  right: 17px;
+  bottom: 17px;
+  left: 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 10px;
+  color: #fff;
+  background: rgba(16, 28, 53, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.vlink-caption-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 9px;
+  color: #fff;
+  background: var(--vlink-orange);
+  font-size: 23px;
+}
+
+.vlink-image-caption strong,
+.vlink-image-caption small {
+  display: block;
+  color: #fff;
+}
+
+.vlink-image-caption strong {
+  font-size: 12px;
+}
+
+.vlink-image-caption small {
+  margin-top: 6px;
+  font-size: 10px;
+}
+
+.vlink-float-card {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 15px;
+  border: 1px solid rgba(16, 28, 53, 0.12);
+  border-radius: 10px;
+  background: #f2e5d5;
+  box-shadow: 0 14px 32px rgba(16, 28, 53, 0.17);
+  animation: vlink-float 5s ease-in-out infinite;
+}
+
+.vlink-float-top {
+  top: 28px;
+  left: -15px;
+}
+
+.vlink-float-bottom {
+  right: -8px;
+  bottom: 33px;
+  animation-delay: -2.4s;
+  background: #dff2e8;
+}
+
+.vlink-float-icon {
+  display: grid;
+  width: 37px;
+  height: 37px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--vlink-orange);
+  font-size: 19px;
+}
+
+.vlink-float-icon.vlink-green {
+  color: #fff;
+  background: #087c58;
+}
+
+.vlink-float-card small,
+.vlink-float-card strong {
+  display: block;
+  color: var(--vlink-navy);
+}
+
+.vlink-float-card small {
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.7px;
+}
+
+.vlink-float-card strong {
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.vlink-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 410px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(16, 168, 120, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: vlink-rotate 40s linear infinite;
+}
+
+.vlink-orbit-b {
+  width: 335px;
+  border-color: rgba(244, 81, 22, 0.25);
+  border-style: dashed;
+  animation-direction: reverse;
+  animation-duration: 55s;
+}
+
+.vlink-hero-footer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+  padding-block: 21px;
+  border-top: 1px solid var(--vlink-border);
+  color: var(--vlink-navy);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.1px;
+}
+
+.vlink-footer-line {
+  height: 2px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(16, 28, 53, 0.15),
+    var(--vlink-green)
+  );
+}
+
+/* =========================================
+   MOVING MARQUEE
+========================================= */
+
+.vlink-marquee {
+  overflow: hidden;
+  padding-block: 20px;
+  color: #fff;
+  background: var(--vlink-orange);
+}
+
+.vlink-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: vlink-marquee 30s linear infinite;
+}
+
+.vlink-marquee:hover .vlink-marquee-track {
+  animation-play-state: paused;
+}
+
+.vlink-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  padding-right: 29px;
+  white-space: nowrap;
+}
+
+.vlink-marquee-group span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.vlink-marquee-group i {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.vlink-intro {
+  background: #f1e5d6;
+}
+
+.vlink-intro-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 65px;
+}
+
+.vlink-intro-content > .vlink-paragraph {
+  max-width: 610px;
+}
+
+.vlink-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 35px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(16, 28, 53, 0.2);
+}
+
+.vlink-mini-grid > div {
+  min-width: 0;
+  padding: 13px 11px;
+  border: 1px solid rgba(16, 28, 53, 0.1);
+  border-radius: 9px;
+  background: #e7d5c0;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.vlink-mini-grid > div:hover {
+  transform: translateY(-5px);
+  background: #dcece2;
+  box-shadow: 0 10px 22px rgba(16, 28, 53, 0.09);
+}
+
+.vlink-mini-grid span {
+  color: var(--vlink-orange);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.vlink-mini-grid h3 {
+  margin: 9px 0;
+  color: var(--vlink-navy);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.vlink-mini-grid p {
+  margin: 0;
+  color: var(--vlink-text);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.vlink-services {
+  color: #fff;
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(16, 168, 120, 0.17),
+      transparent 35%
+    ),
+    var(--vlink-navy);
+}
+
+.vlink-services .vlink-heading,
+.vlink-services .vlink-paragraph,
+.vlink-services .vlink-kicker {
+  color: #fff;
+}
+
+.vlink-services .vlink-heading span {
+  color: #ff8b5e;
+}
+
+.vlink-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 42px;
+}
+
+.vlink-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.vlink-service-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 270px;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: #243652;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.vlink-service-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    var(--vlink-orange),
+    var(--vlink-green)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.vlink-service-card:hover {
+  border-color: rgba(16, 168, 120, 0.8);
+  background: #2b4261;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+  transform: translateY(-7px);
+}
+
+.vlink-service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.vlink-card-top,
+.vlink-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vlink-card-number {
+  color: #e7eef9;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.3px;
+}
+
+.vlink-card-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(16, 168, 120, 0.45);
+  border-radius: 10px;
+  color: #fff;
+  background: #087c63;
+  font-size: 21px;
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.vlink-service-card:hover .vlink-card-icon {
+  background: var(--vlink-orange);
+  transform: rotate(-7deg) scale(1.05);
+}
+
+.vlink-service-card h3 {
+  margin: 24px 0 10px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.vlink-service-card > p {
+  margin: 0;
+  color: #edf2fa;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.vlink-card-bottom {
+  margin-top: auto;
+  padding-top: 22px;
+  color: #eaf2fc;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.vlink-card-arrow {
+  color: #7de0b8;
+  font-size: 20px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.vlink-service-card:hover .vlink-card-arrow {
+  color: #ff8b5e;
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   FEATURE
+========================================= */
+
+.vlink-feature {
+  background: #fff4e7;
+}
+
+.vlink-feature-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 70px;
+}
+
+.vlink-feature-media {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 28, 53, 0.12);
+  border-radius: 15px;
+  background: #d9e8df;
+  box-shadow: 0 20px 48px rgba(16, 28, 53, 0.14);
+}
+
+.vlink-feature-image {
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.vlink-feature-media:hover .vlink-feature-image {
+  filter: saturate(1.1);
+  transform: scale(1.055);
+}
+
+.vlink-feature-label {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 9px;
+  color: #fff;
+  background: rgba(16, 28, 53, 0.93);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.vlink-feature-label span {
+  color: #7de0b8;
+  font-size: 19px;
+}
+
+.vlink-feature-content .vlink-heading {
+  margin-bottom: 20px;
+}
+
+.vlink-check-list {
+  display: grid;
+  gap: 14px;
+  margin: 25px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vlink-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: var(--vlink-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.vlink-check-list li span {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #087c58;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.vlink-check-list li:hover span {
+  background: var(--vlink-orange);
+  transform: scale(1.1);
+}
+
+.vlink-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--vlink-navy) !important;
+  font-size: 12px;
+  font-weight: 850;
+  transition: color 0.3s ease;
+}
+
+.vlink-text-link span {
+  color: var(--vlink-orange);
+  transition: transform 0.3s ease;
+}
+
+.vlink-text-link:hover {
+  color: var(--vlink-orange) !important;
+}
+
+.vlink-text-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.vlink-process {
+  background: #e9eee7;
+}
+
+.vlink-process .vlink-section-header {
+  align-items: flex-end;
+}
+
+.vlink-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+
+.vlink-process-card {
+  min-width: 0;
+  padding: 0 22px;
+  border-left: 1px solid rgba(16, 28, 53, 0.19);
+}
+
+.vlink-process-card:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.vlink-process-card:last-child {
+  padding-right: 0;
+}
+
+.vlink-process-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.vlink-process-top > span:first-child {
+  color: var(--vlink-navy);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.vlink-process-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(16, 28, 53, 0.15);
+  border-radius: 9px;
+  color: #fff;
+  background: #087c58;
+  font-size: 20px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.vlink-process-card:hover .vlink-process-icon {
+  background: var(--vlink-orange);
+  transform: translateY(-4px) rotate(-5deg);
+}
+
+.vlink-process-line {
+  height: 3px;
+  margin: 23px 0;
+  overflow: hidden;
+  background: #d2d9d0;
+}
+
+.vlink-process-line span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--vlink-orange),
+    var(--vlink-green)
+  );
+  transform: translateX(-101%);
+  transition: transform 0.5s ease;
+}
+
+.vlink-process-card:hover .vlink-process-line span {
+  transform: translateX(0);
+}
+
+.vlink-process-card h3 {
+  margin: 0 0 11px;
+  color: var(--vlink-navy);
+  font-size: 19px;
+}
+
+.vlink-process-card p {
+  margin: 0;
+  color: var(--vlink-text);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.vlink-faq {
+  background: #f7e9d8;
+}
+
+.vlink-faq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 70px;
+}
+
+.vlink-faq-layout > div:first-child > .vlink-paragraph {
+  margin: 22px 0;
+}
+
+.vlink-faq-list {
+  border-top: 1px solid rgba(16, 28, 53, 0.2);
+}
+
+.vlink-faq-item {
+  border-bottom: 1px solid rgba(16, 28, 53, 0.2);
+}
+
+.vlink-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 21px 17px;
+  border-radius: 7px;
+  color: var(--vlink-navy);
+  background: #ead8c4;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1.6;
+  list-style: none;
+  transition: background 0.3s ease;
+}
+
+.vlink-faq-item summary:hover {
+  background: #dcece2;
+}
+
+.vlink-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.vlink-faq-item summary span {
+  flex: 0 0 auto;
+  color: var(--vlink-orange);
+  font-size: 23px;
+  transition: transform 0.3s ease;
+}
+
+.vlink-faq-item[open] summary span {
+  transform: rotate(45deg);
+}
+
+.vlink-faq-item > p {
+  margin: 0;
+  padding: 15px 17px 22px;
+  border-radius: 0 0 7px 7px;
+  color: var(--vlink-text);
+  background: #f0e1d0;
+  font-size: 12px;
+  line-height: 1.9;
+  animation: vlink-enter 0.3s ease-out;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.vlink-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 82px;
+  color: #fff;
+  background:
+    radial-gradient(
+      ellipse at 85% 50%,
+      rgba(16, 168, 120, 0.18),
+      transparent 37%
+    ),
+    var(--vlink-navy);
+}
+
+.vlink-cta-orb {
+  top: 4%;
+  right: 8%;
+  background: rgba(244, 81, 22, 0.18);
+}
+
+.vlink-cta-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 35px;
+}
+
+.vlink-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.vlink-cta h2 {
+  margin: 22px 0 18px;
+  color: #fff;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.vlink-cta h2 span {
+  color: #ff8b5e;
+}
+
+.vlink-cta-content > p {
+  max-width: 450px;
+  margin: 0;
+  color: #f0f3fa;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.vlink-button-ghost {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: #243652;
+}
+
+.vlink-button-ghost:hover {
+  color: #fff !important;
+  border-color: #7de0b8;
+  background: #2c4563;
+}
+
+.vlink-cta-art {
+  position: relative;
+  display: grid;
+  width: min(100%, 400px);
+  aspect-ratio: 1;
+  place-items: center;
+  margin-inline: auto;
+}
+
+.vlink-cta-ring {
+  position: absolute;
+  width: 88%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(125, 224, 184, 0.45);
+  border-radius: 50%;
+  animation: vlink-rotate 28s linear infinite;
+}
+
+.vlink-ring-two {
+  width: 68%;
+  border-color: rgba(255, 139, 94, 0.55);
+  border-style: dashed;
+  animation-direction: reverse;
+  animation-duration: 21s;
+}
+
+.vlink-ring-three {
+  width: 47%;
+  border-color: rgba(255, 255, 255, 0.28);
+  animation-duration: 35s;
+}
+
+.vlink-cta-center {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 105px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 28px;
+  color: #fff;
+  background: linear-gradient(145deg, #f45116, #c6380b);
+  box-shadow: 0 15px 45px rgba(244, 81, 22, 0.3);
+  font-size: 43px;
+  font-weight: 900;
+  animation: vlink-float 4s ease-in-out infinite;
+}
+
+.vlink-cta-node {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  width: 44px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  color: #fff;
+  background: #29415e;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+  font-size: 19px;
+  animation: vlink-float 4.5s ease-in-out infinite;
+}
+
+.vlink-node-one {
+  top: 8%;
+  left: 47%;
+}
+
+.vlink-node-two {
+  top: 40%;
+  right: 1%;
+  animation-delay: -1.2s;
+  color: #ffad8e;
+}
+
+.vlink-node-three {
+  right: 21%;
+  bottom: 5%;
+  animation-delay: -2.3s;
+  color: #7de0b8;
+}
+
+.vlink-node-four {
+  bottom: 22%;
+  left: 2%;
+  animation-delay: -0.7s;
+  color: #ffad8e;
+}
+
+/* =========================================
+   TEXT VISIBILITY SAFETY
+========================================= */
+
+.vlink-page .vlink-title,
+.vlink-page .vlink-heading,
+.vlink-page .vlink-paragraph,
+.vlink-page .vlink-lead,
+.vlink-page .vlink-kicker,
+.vlink-page .vlink-eyebrow,
+.vlink-page .vlink-trust,
+.vlink-page .vlink-mini-grid h3,
+.vlink-page .vlink-mini-grid p,
+.vlink-page .vlink-service-card h3,
+.vlink-page .vlink-service-card p,
+.vlink-page .vlink-process-card h3,
+.vlink-page .vlink-process-card p,
+.vlink-page .vlink-check-list li,
+.vlink-page .vlink-faq-item summary,
+.vlink-page .vlink-faq-item > p {
+  opacity: 1;
+  visibility: visible;
+  -webkit-text-fill-color: currentColor;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes vlink-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vlink-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes vlink-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes vlink-pulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.7);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+@keyframes vlink-glow {
+  from {
+    transform: translate3d(-10px, -8px, 0) scale(0.95);
+  }
+
+  to {
+    transform: translate3d(12px, 15px, 0) scale(1.08);
+  }
+}
+
+@keyframes vlink-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .vlink-container {
+    width: min(100% - 44px, 800px);
+  }
+
+  .vlink-section {
+    padding-block: 75px;
+  }
+
+  .vlink-hero-layout {
+    gap: 28px;
+  }
+
+  .vlink-title {
+    font-size: clamp(40px, 5.5vw, 58px);
+    letter-spacing: -2px;
+  }
+
+  .vlink-hero-visual {
+    min-height: 390px;
+  }
+
+  .vlink-image-frame {
+    height: 320px;
+  }
+
+  .vlink-float-top {
+    left: -5px;
+  }
+
+  .vlink-float-bottom {
+    right: -3px;
+  }
+
+  .vlink-orbit {
+    width: 330px;
+  }
+
+  .vlink-orbit-b {
+    width: 280px;
+  }
+
+  .vlink-intro-layout,
+  .vlink-feature-layout {
+    gap: 35px;
+  }
+
+  .vlink-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vlink-feature-media {
+    height: 370px;
+  }
+
+  .vlink-faq-layout {
+    gap: 35px;
+  }
+
+  .vlink-process-card {
+    padding-inline: 15px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 680px) {
+  .vlink-container {
+    width: calc(100% - 36px);
+  }
+
+  .vlink-section {
+    padding-block: 60px;
+  }
+
+  .vlink-heading {
+    font-size: clamp(31px, 8vw, 42px);
+    letter-spacing: -1.2px;
+  }
+
+  .vlink-hero {
+    padding-top: 45px;
+  }
+
+  .vlink-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .vlink-hero-content {
+    padding-block: 10px 5px;
+  }
+
+  .vlink-eyebrow {
+    font-size: 9px;
+  }
+
+  .vlink-title {
+    margin-block: 22px 18px;
+    font-size: clamp(40px, 11vw, 57px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+  }
+
+  .vlink-lead {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .vlink-actions {
+    gap: 10px;
+  }
+
+  .vlink-button {
+    min-height: 47px;
+    padding-inline: 14px;
+    font-size: 11px;
+  }
+
+  .vlink-trust {
+    align-items: flex-start;
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .vlink-hero-visual {
+    min-height: 330px;
+    margin-top: 10px;
+  }
+
+  .vlink-image-frame {
+    width: calc(100% - 20px);
+    height: 285px;
+    transform: none;
+  }
+
+  .vlink-image-caption {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    gap: 9px;
+    padding: 11px;
+  }
+
+  .vlink-caption-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 19px;
+  }
+
+  .vlink-image-caption strong {
+    font-size: 10px;
+  }
+
+  .vlink-image-caption small {
+    font-size: 9px;
+  }
+
+  .vlink-float-card {
+    gap: 7px;
+    padding: 9px;
+  }
+
+  .vlink-float-top {
+    top: 2px;
+    left: 0;
+  }
+
+  .vlink-float-bottom {
+    right: 0;
+    bottom: 2px;
+  }
+
+  .vlink-float-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .vlink-float-card small {
+    font-size: 7px;
+  }
+
+  .vlink-float-card strong {
+    font-size: 9px;
+  }
+
+  .vlink-orbit {
+    width: 300px;
+  }
+
+  .vlink-orbit-b {
+    width: 245px;
+  }
+
+  .vlink-hero-footer {
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 7px;
+    letter-spacing: 0.7px;
+  }
+
+  .vlink-marquee {
+    padding-block: 16px;
+  }
+
+  .vlink-marquee-group {
+    gap: 19px;
+    padding-right: 19px;
+  }
+
+  .vlink-marquee-group span {
+    font-size: 10px;
+  }
+
+  .vlink-intro-layout,
+  .vlink-feature-layout,
+  .vlink-faq-layout,
+  .vlink-cta-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .vlink-mini-grid {
+    gap: 8px;
+    margin-top: 25px;
+  }
+
+  .vlink-mini-grid > div {
+    padding: 10px 8px;
+  }
+
+  .vlink-mini-grid h3 {
+    font-size: 11px;
+  }
+
+  .vlink-mini-grid p {
+    font-size: 10px;
+    line-height: 1.65;
+  }
+
+  .vlink-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 27px;
+  }
+
+  .vlink-paragraph-light {
+    max-width: 100%;
+  }
+
+  .vlink-service-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .vlink-service-card {
+    min-height: 235px;
+    padding: 21px;
+  }
+
+  .vlink-service-card h3 {
+    margin-top: 20px;
+    font-size: 17px;
+  }
+
+  .vlink-feature-media {
+    height: 300px;
+  }
+
+  .vlink-feature-content .vlink-heading {
+    margin-bottom: 16px;
+  }
+
+  .vlink-check-list {
+    gap: 12px;
+    margin-block: 20px;
+  }
+
+  .vlink-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vlink-process-card,
+  .vlink-process-card:first-child,
+  .vlink-process-card:last-child {
+    padding: 19px 0;
+    border-top: 1px solid rgba(16, 28, 53, 0.18);
+    border-left: 0;
+  }
+
+  .vlink-process-card:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .vlink-process-line {
+    margin-block: 17px;
+  }
+
+  .vlink-process-card h3 {
+    font-size: 18px;
+  }
+
+  .vlink-faq-layout {
+    gap: 30px;
+  }
+
+  .vlink-faq-item summary {
+    padding: 17px 12px;
+    font-size: 12px;
+  }
+
+  .vlink-faq-item > p {
+    padding-inline: 12px;
+  }
+
+  .vlink-cta {
+    padding-block: 62px;
+  }
+
+  .vlink-cta h2 {
+    font-size: clamp(35px, 9vw, 48px);
+    letter-spacing: -1.4px;
+  }
+
+  .vlink-cta-content > p {
+    font-size: 12px;
+  }
+
+  .vlink-cta-art {
+    width: min(100%, 320px);
+  }
+
+  .vlink-cta-center {
+    width: 82px;
+    border-radius: 22px;
+    font-size: 35px;
+  }
+
+  .vlink-cta-node {
+    width: 38px;
+    border-radius: 10px;
+    font-size: 17px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .vlink-container {
+    width: calc(100% - 28px);
+  }
+
+  .vlink-title {
+    font-size: 38px;
+  }
+
+  .vlink-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .vlink-button {
+    width: 100%;
+  }
+
+  .vlink-mini-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vlink-mini-grid > div {
+    padding: 12px;
+  }
+
+  .vlink-hero-footer {
+    font-size: 6px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .vlink-page *,
+  .vlink-page *::before,
+  .vlink-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .vlink-page .vlink-hero-content,
+  .vlink-page .vlink-hero-visual {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

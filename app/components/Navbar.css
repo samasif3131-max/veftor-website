@@ -1,0 +1,712 @@
+/* =========================================
+   VEFTOR NAVBAR — FULL WORKING CSS
+   File: app/components/Navbar.css
+========================================= */
+
+.vf-header,
+.vf-header * {
+  box-sizing: border-box;
+}
+
+.vf-header {
+  position: relative;
+  z-index: 500;
+  width: 100%;
+  background: #fffaf5;
+  color: #101d37;
+  font-family: inherit;
+}
+
+/* =========================================
+   ANNOUNCEMENT BAR
+========================================= */
+
+.vf-announcement {
+  position: relative;
+  min-height: 52px;
+  margin: 0;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 40px;
+  align-items: center;
+  background: linear-gradient(100deg, #ffeadc, #fff0e4);
+  border-bottom: 1px solid rgba(255, 112, 43, 0.15);
+  border-radius: 0 0 14px 14px;
+}
+
+.vf-slide-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #101d37;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vf-slide-arrow:hover {
+  color: #f45116;
+  background: rgba(244, 81, 22, 0.08);
+  transform: scale(1.08);
+}
+
+.vf-announcement-content {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #26344b;
+  font-size: 14px;
+  font-weight: 650;
+  text-align: center;
+  animation: vf-slide-in 0.4s ease both;
+}
+
+.vf-announcement-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+  background: #ff5a1f;
+  box-shadow: 0 0 0 4px rgba(255, 90, 31, 0.12);
+}
+
+.vf-announcement-divider {
+  width: 1px;
+  height: 20px;
+  flex: 0 0 1px;
+  background: #ff8557;
+}
+
+.vf-announcement-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #e84612;
+  text-decoration: none;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.vf-announcement-content a span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.vf-announcement-content a:hover span {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   MAIN NAVIGATION
+========================================= */
+
+.vf-nav {
+  position: relative;
+  z-index: 501;
+  width: min(1440px, 100%);
+  min-height: 104px;
+  margin: 0 auto;
+  padding: 18px 4.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: #fffaf5;
+}
+
+/* Logo */
+
+.vf-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  color: #101d37;
+  font-size: 40px;
+  font-weight: 850;
+  letter-spacing: -2px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.vf-logo-mark {
+  display: inline-block;
+  color: #f45116;
+  font-size: 54px;
+  line-height: 1;
+  font-weight: 950;
+  transform: skew(-8deg);
+  transition: transform 0.25s ease;
+}
+
+.vf-logo:hover .vf-logo-mark {
+  transform: skew(-8deg) scale(1.08);
+}
+
+.vf-logo-period {
+  color: #f45116;
+}
+
+/* Navigation links */
+
+.vf-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2.2vw, 34px);
+}
+
+.vf-nav-links > a,
+.vf-login {
+  color: #26344b;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.vf-nav-links > a:hover,
+.vf-login:hover {
+  color: #f45116;
+}
+
+/* Chevron */
+
+.vf-chevron {
+  display: inline-block;
+  margin-left: 4px;
+  color: #f45116;
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* =========================================
+   SERVICES & MARKETPLACE DROPDOWNS
+========================================= */
+
+.vf-nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.vf-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #26344b;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.vf-dropdown-trigger:hover,
+.vf-dropdown-trigger[aria-expanded="true"] {
+  color: #f45116;
+}
+
+.vf-dropdown-trigger .vf-chevron {
+  transition: transform 0.25s ease;
+}
+
+.vf-dropdown-trigger[aria-expanded="true"] .vf-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+
+.vf-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -18px;
+  z-index: 9999;
+  width: 250px;
+  max-width: calc(100vw - 32px);
+  padding: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  border: 1px solid #f0e5de;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(16, 29, 55, 0.14);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+/* Open when clicked through React state */
+
+.vf-nav-dropdown.vf-dropdown-open > .vf-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Desktop hover support */
+
+@media (min-width: 761px) {
+  .vf-nav-dropdown:hover > .vf-dropdown-menu,
+  .vf-nav-dropdown:focus-within > .vf-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown links */
+
+.vf-dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 12px 13px;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #35435a;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vf-dropdown-menu a:hover {
+  color: #e84612;
+  background: #fff0e7;
+  transform: translateX(3px);
+}
+
+.vf-dropdown-trigger:focus-visible,
+.vf-dropdown-menu a:focus-visible {
+  outline: 3px solid rgba(29, 78, 216, 0.35);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   LOGIN & GET STARTED
+========================================= */
+
+.vf-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.vf-get-started {
+  min-height: 50px;
+  padding: 0 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(115deg, #f04412, #ff7628);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 750;
+  white-space: nowrap;
+  box-shadow: 0 9px 24px rgba(244, 81, 22, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.vf-get-started:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  filter: saturate(1.1);
+  box-shadow: 0 14px 30px rgba(244, 81, 22, 0.3);
+}
+
+.vf-get-started span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Hidden on desktop; enabled on mobile */
+
+.vf-menu-toggle,
+.vf-mobile-actions {
+  display: none;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes vf-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   LAPTOP / SMALL DESKTOP
+========================================= */
+
+@media (min-width: 761px) and (max-width: 1150px) {
+  .vf-nav {
+    gap: 18px;
+    padding-inline: 3%;
+  }
+
+  .vf-logo {
+    gap: 6px;
+    font-size: 32px;
+  }
+
+  .vf-logo-mark {
+    font-size: 43px;
+  }
+
+  .vf-nav-links {
+    gap: 14px;
+  }
+
+  .vf-nav-links > a,
+  .vf-login,
+  .vf-dropdown-trigger {
+    font-size: 13px;
+  }
+
+  .vf-nav-actions {
+    gap: 13px;
+  }
+
+  .vf-get-started {
+    min-height: 46px;
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   TABLET & MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 760px) {
+  .vf-announcement {
+    min-height: 46px;
+    padding-inline: 5px;
+    grid-template-columns: 27px minmax(0, 1fr) 27px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .vf-announcement-content {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .vf-announcement-dot {
+    width: 7px;
+    height: 7px;
+    flex-basis: 7px;
+  }
+
+  .vf-announcement-divider {
+    height: 15px;
+  }
+
+  .vf-announcement-content a {
+    gap: 2px;
+  }
+
+  .vf-slide-arrow {
+    width: 26px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .vf-nav {
+    min-height: 78px;
+    padding: 13px 5%;
+    gap: 12px;
+  }
+
+  .vf-logo {
+    gap: 6px;
+    font-size: 32px;
+  }
+
+  .vf-logo-mark {
+    font-size: 43px;
+  }
+
+  /* Hamburger button */
+
+  .vf-menu-toggle {
+    width: 44px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #ffddca;
+    border-radius: 10px;
+    background: #ffede2;
+    color: #101d37;
+    font-size: 22px;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .vf-menu-toggle:hover {
+    background: #ffe0cc;
+    color: #f45116;
+  }
+
+  /* Collapsed navigation */
+
+  .vf-nav-links {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    padding: 12px 5% 22px;
+    border-top: 1px solid #ffeadc;
+    border-bottom: 1px solid #f4e4d9;
+    border-radius: 0 0 16px 16px;
+    background: #fffaf5;
+    box-shadow: 0 18px 25px rgba(16, 29, 55, 0.12);
+  }
+
+  .vf-nav-links.vf-nav-open {
+    display: flex;
+  }
+
+  /* Standard mobile links */
+
+  .vf-nav-links > a {
+    display: block;
+    width: 100%;
+    padding: 14px 2px;
+    border-bottom: 1px solid #f6e8df;
+    color: #26344b;
+    font-size: 15px;
+  }
+
+  /* Mobile dropdown containers */
+
+  .vf-nav-dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid #f6e8df;
+  }
+
+  .vf-dropdown-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 2px;
+    text-align: left;
+    font-size: 15px;
+  }
+
+  /* Mobile dropdowns expand inside the menu */
+
+  .vf-dropdown-menu {
+    position: static;
+    width: 100%;
+    max-width: none;
+    display: none;
+    gap: 3px;
+    padding: 4px 0 12px 12px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+  }
+
+  .vf-nav-dropdown.vf-dropdown-open > .vf-dropdown-menu {
+    display: flex;
+  }
+
+  .vf-dropdown-menu a {
+    padding: 12px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #35435a;
+    font-size: 14px;
+  }
+
+  .vf-dropdown-menu a:hover {
+    background: #fff0e7;
+    transform: none;
+  }
+
+  /* Hide desktop actions */
+
+  .vf-nav-actions {
+    display: none;
+  }
+
+  /* Show mobile actions */
+
+  .vf-mobile-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding-top: 18px;
+  }
+
+  .vf-mobile-actions .vf-login {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .vf-mobile-actions .vf-get-started {
+    min-height: 44px;
+    padding-inline: 16px;
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .vf-announcement-content {
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .vf-announcement-divider {
+    display: none;
+  }
+
+  .vf-logo {
+    font-size: 29px;
+  }
+
+  .vf-logo-mark {
+    font-size: 39px;
+  }
+
+  .vf-menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vf-mobile-actions {
+    gap: 12px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .vf-header *,
+  .vf-header *::before,
+  .vf-header *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}/* FIX: Services dropdown disappearing on hover */
+
+@media (min-width: 761px) {
+  .vf-nav-dropdown {
+    position: relative;
+    align-self: stretch;
+  }
+
+  .vf-dropdown-menu {
+    top: 100%;
+    left: -18px;
+    margin-top: 0;
+  }
+
+  /* Invisible bridge prevents the hover gap */
+  .vf-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -14px;
+    height: 14px;
+    background: transparent;
+  }
+
+  .vf-nav-dropdown:hover > .vf-dropdown-menu,
+  .vf-nav-dropdown:focus-within > .vf-dropdown-menu,
+  .vf-nav-dropdown.vf-dropdown-open > .vf-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
